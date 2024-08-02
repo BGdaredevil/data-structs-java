@@ -1,11 +1,13 @@
 import tests.BinarySearch;
+import tests.LinearSearch;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 
-        boolean result = Main.testBinarySearch();
+//        boolean result = Main.testBinarySearch();
+        boolean result = Main.testLinearSearch();
 
         if (result) {
             System.out.println("pass");
@@ -14,9 +16,11 @@ public class Main {
         }
     }
 
-    static boolean testBinarySearch() {
-        var tests = new BinarySearch(new structures.BinarySearch());
+    static boolean testLinearSearch() {
+        return LinearSearch.linearlyFind();
+    }
 
-        return tests.testTheSubject();
+    static boolean testBinarySearch() {
+        return (new BinarySearch(new structures.BinarySearch())).testTheSubject();
     }
 }
