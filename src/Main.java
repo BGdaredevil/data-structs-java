@@ -1,6 +1,7 @@
 import structures.SinglyLinkedList;
 import tests.BinarySearch;
 import tests.CustomLinkedList;
+import tests.CustomQueue;
 import tests.LinearSearch;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -12,7 +13,8 @@ public class Main {
 //        boolean result = Main.testLinearSearch();
 //        boolean result = tests.CrystalBalls.testCrystalBalls();
 //        boolean result = tests.BubbleSort.testBubbleSort();
-        boolean result = Main.testSinglyLinkedList();
+//        boolean result = Main.testSinglyLinkedList();
+        boolean result = Main.testQueue();
 
         if (result) {
             System.out.println("pass");
@@ -34,4 +36,7 @@ public class Main {
         return CustomLinkedList.testLinkedList(new SinglyLinkedList<Integer>());
     }
 
+    static boolean testQueue() {
+        return CustomQueue.testQueue(new structures.CustomQueue());
+    }
 }
