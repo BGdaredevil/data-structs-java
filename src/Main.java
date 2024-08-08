@@ -8,7 +8,8 @@ public class Main {
 
 //        boolean result = Main.testBinarySearch();
 //        boolean result = Main.testLinearSearch();
-        boolean result = tests.CrystalBalls.testCrystalBalls();
+//        boolean result = tests.CrystalBalls.testCrystalBalls();
+        boolean result = tests.BubbleSort.testBubbleSort();
 
         if (result) {
             System.out.println("pass");
