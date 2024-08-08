@@ -14,13 +14,18 @@ public class CrystalBalls {
             dataOne[i] = true;
         }
 
+        var timer = new tests.Timer();
         int first = structures.CrystalBalls.find(dataOne);
+        timer.end();
+
         if (first != randomIndex) {
             System.out.printf("Find gave %d. Expected %d\n", first, randomIndex);
             return false;
         }
 
+        timer = new tests.Timer("Does not find");
         int second = structures.CrystalBalls.find(dataTwo);
+        timer.end();
         if (second != -1) {
             System.out.printf("Find gave %d. Expected %d\n", first, randomIndex);
             return false;
