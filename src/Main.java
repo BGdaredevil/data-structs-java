@@ -1,4 +1,6 @@
+import structures.SinglyLinkedList;
 import tests.BinarySearch;
+import tests.CustomLinkedList;
 import tests.LinearSearch;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -9,7 +11,8 @@ public class Main {
 //        boolean result = Main.testBinarySearch();
 //        boolean result = Main.testLinearSearch();
 //        boolean result = tests.CrystalBalls.testCrystalBalls();
-        boolean result = tests.BubbleSort.testBubbleSort();
+//        boolean result = tests.BubbleSort.testBubbleSort();
+        boolean result = Main.testSinglyLinkedList();
 
         if (result) {
             System.out.println("pass");
@@ -25,6 +28,10 @@ public class Main {
 
     static boolean testBinarySearch() {
         return (new BinarySearch(new structures.BinarySearch())).testTheSubject();
+    }
+
+    static boolean testSinglyLinkedList() {
+        return CustomLinkedList.testLinkedList(new SinglyLinkedList<Integer>());
     }
 
 }
