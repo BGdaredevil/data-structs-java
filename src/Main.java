@@ -1,3 +1,4 @@
+import structures.CustomArrayList;
 import structures.SinglyLinkedList;
 import tests.BinarySearch;
 import tests.CustomLinkedList;
@@ -14,7 +15,8 @@ public class Main {
 //        boolean result = tests.CrystalBalls.testCrystalBalls();
 //        boolean result = tests.BubbleSort.testBubbleSort();
 //        boolean result = Main.testSinglyLinkedList();
-        boolean result = Main.testQueue();
+//        boolean result = Main.testQueue();
+        boolean result = Main.testArrayList();
 
         if (result) {
             System.out.println("pass");
@@ -36,7 +38,11 @@ public class Main {
         return CustomLinkedList.testLinkedList(new SinglyLinkedList<Integer>());
     }
 
+    static boolean testArrayList() {
+        return CustomLinkedList.testLinkedList(new CustomArrayList<Integer>());
+    }
+
     static boolean testQueue() {
-        return CustomQueue.testQueue(new structures.CustomQueue());
+        return CustomQueue.testQueue(new structures.CustomQueue<Integer>());
     }
 }

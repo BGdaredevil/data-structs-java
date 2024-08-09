@@ -7,14 +7,13 @@ public class SinglyLinkedNode<T> {
     SinglyLinkedNode<T> next = null;
 
     public SinglyLinkedNode() {
-        this.value = null;
-        this.next = null;
+        this(null, null);
     }
 
-    public SinglyLinkedNode( T value) {
-        this.value = value;
-        this.next = null;
+    public SinglyLinkedNode(T value) {
+        this(value, null);
     }
+
     public SinglyLinkedNode(T value, SinglyLinkedNode<T> next) {
         this.value = value;
         this.next = next;

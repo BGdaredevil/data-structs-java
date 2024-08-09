@@ -9,8 +9,7 @@ public class Timer {
     long endTime;
 
     public Timer() {
-        this.name = "";
-        this.startTime = System.nanoTime();
+        this("");
     }
 
     public Timer(String name) {
