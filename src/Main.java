@@ -1,9 +1,6 @@
 import structures.CustomArrayList;
 import structures.SinglyLinkedList;
-import tests.BinarySearch;
-import tests.CustomLinkedList;
-import tests.CustomQueue;
-import tests.LinearSearch;
+import tests.*;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -16,7 +13,8 @@ public class Main {
 //        boolean result = tests.BubbleSort.testBubbleSort();
 //        boolean result = Main.testSinglyLinkedList();
 //        boolean result = Main.testQueue();
-        boolean result = Main.testArrayList();
+//        boolean result = Main.testArrayList();
+        boolean result = Main.testRingBuffer();
 
         if (result) {
             System.out.println("pass");
@@ -44,5 +42,9 @@ public class Main {
 
     static boolean testQueue() {
         return CustomQueue.testQueue(new structures.CustomQueue<Integer>());
+    }
+
+    static boolean testRingBuffer() {
+        return RingBuffer.testRingBuffer(new structures.RingBuffer<Integer>());
     }
 }
