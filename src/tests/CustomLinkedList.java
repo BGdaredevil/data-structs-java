@@ -4,6 +4,7 @@ import interfaces.CustomList;
 
 public class CustomLinkedList {
     public static boolean testLinkedList(CustomList<Integer> list) {
+        var timer = new Timer();
         list.append(5);
         list.append(7);
         list.append(9);
@@ -53,7 +54,7 @@ public class CustomLinkedList {
         if (list.get(0) != 7) {
             return false;
         }
-
+        timer.end();
         return true;
     }
 }
