@@ -14,7 +14,8 @@ public class Main {
 //        boolean result = Main.testSinglyLinkedList();
 //        boolean result = Main.testQueue();
 //        boolean result = Main.testArrayList();
-        boolean result = Main.testRingBuffer();
+//        boolean result = Main.testRingBuffer();
+        boolean result = Main.testMazeSolver();
 
         if (result) {
             System.out.println("pass");
@@ -46,5 +47,12 @@ public class Main {
 
     static boolean testRingBuffer() {
         return RingBuffer.testRingBuffer(new structures.RingBuffer<Integer>());
+    }
+    static boolean testMazeSolver() {
+        var timer = new Timer("testMazeSolver");
+        var result = MazeSolver.testMazeSolver();
+        timer.end();
+
+        return result;
     }
 }
