@@ -18,7 +18,8 @@ public class Main {
 //        boolean result = Main.testRingBuffer();
 //        boolean result = Main.testMazeSolver();
 //        boolean result = Main.testQS();
-        boolean result = Main.testDoublyLinkedList();
+//        boolean result = Main.testDoublyLinkedList();
+        boolean result = Main.testTreeTraversal();
 
         if (result) {
             System.out.println("pass");
@@ -58,5 +59,8 @@ public class Main {
     }
     static boolean testQS() {
         return QuickSort.testSort();
+    }
+    static boolean testTreeTraversal() {
+        return BinaryTreeTraverse.btInOrder() && BinaryTreeTraverse.btPreOrder() && BinaryTreeTraverse.btPostOrder();
     }
 }
