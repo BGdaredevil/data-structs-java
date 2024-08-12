@@ -15,7 +15,8 @@ public class Main {
 //        boolean result = Main.testQueue();
 //        boolean result = Main.testArrayList();
 //        boolean result = Main.testRingBuffer();
-        boolean result = Main.testMazeSolver();
+//        boolean result = Main.testMazeSolver();
+        boolean result = Main.testQS();
 
         if (result) {
             System.out.println("pass");
@@ -54,5 +55,9 @@ public class Main {
         timer.end();
 
         return result;
+    }
+
+    static boolean testQS() {
+        return QuickSort.testSort();
     }
 }
