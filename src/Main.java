@@ -21,7 +21,8 @@ public class Main {
 //        boolean result = Main.testDoublyLinkedList();
 //        boolean result = Main.testTreeTraversal();
 //        boolean result = Main.testBTBFS();
-        boolean result = Main.compareTrees();
+//        boolean result = Main.compareTrees();
+        boolean result = Main.treeFindDFS();
 
         if (result) {
             System.out.println("pass");
@@ -80,6 +81,10 @@ public class Main {
     }
 
     static boolean compareTrees() {
-        return TreeComparison.compare();
+        return BinaryTreeComparison.compare();
+    }
+
+    static boolean treeFindDFS() {
+        return BinaryTreeDFS.testTreeDFS();
     }
 }
