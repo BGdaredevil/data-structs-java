@@ -3,6 +3,8 @@ import structures.DoublyLinkedList;
 import structures.SinglyLinkedList;
 import tests.*;
 
+import java.util.ArrayList;
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -22,7 +24,8 @@ public class Main {
 //        boolean result = Main.testTreeTraversal();
 //        boolean result = Main.testBTBFS();
 //        boolean result = Main.compareTrees();
-        boolean result = Main.treeFindDFS();
+//        boolean result = Main.treeFindDFS();
+        boolean result = Main.testMinHeap();
 
         if (result) {
             System.out.println("pass");
@@ -86,5 +89,9 @@ public class Main {
 
     static boolean treeFindDFS() {
         return BinaryTreeDFS.testTreeDFS();
+    }
+
+    static boolean testMinHeap() {
+        return MinHeap.testMinHeap();
     }
 }
