@@ -20,7 +20,8 @@ public class Main {
 //        boolean result = Main.testQS();
 //        boolean result = Main.testDoublyLinkedList();
 //        boolean result = Main.testTreeTraversal();
-        boolean result = Main.testBTBFS();
+//        boolean result = Main.testBTBFS();
+        boolean result = Main.compareTrees();
 
         if (result) {
             System.out.println("pass");
@@ -33,24 +34,31 @@ public class Main {
     static boolean testLinearSearch() {
         return LinearSearch.linearlyFind();
     }
+
     static boolean testBinarySearch() {
         return (new BinarySearch(new structures.BinarySearch())).testTheSubject();
     }
+
     static boolean testSinglyLinkedList() {
         return CustomLinkedList.testLinkedList(new SinglyLinkedList<Integer>());
     }
+
     static boolean testDoublyLinkedList() {
         return CustomLinkedList.testLinkedList(new DoublyLinkedList<Integer>());
     }
+
     static boolean testArrayList() {
         return CustomLinkedList.testLinkedList(new CustomArrayList<Integer>());
     }
+
     static boolean testQueue() {
         return CustomQueue.testQueue(new structures.CustomQueue<Integer>());
     }
+
     static boolean testRingBuffer() {
         return RingBuffer.testRingBuffer(new structures.RingBuffer<Integer>());
     }
+
     static boolean testMazeSolver() {
         var timer = new Timer("testMazeSolver");
         var result = MazeSolver.testMazeSolver();
@@ -58,14 +66,20 @@ public class Main {
 
         return result;
     }
+
     static boolean testQS() {
         return QuickSort.testSort();
     }
+
     static boolean testTreeTraversal() {
         return BinaryTreeTraverse.btInOrder() && BinaryTreeTraverse.btPreOrder() && BinaryTreeTraverse.btPostOrder();
     }
 
     static boolean testBTBFS() {
         return BinaryTreeBFS.testBTBFS();
+    }
+
+    static boolean compareTrees() {
+        return TreeComparison.compare();
     }
 }

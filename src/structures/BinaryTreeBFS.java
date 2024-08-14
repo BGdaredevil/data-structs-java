@@ -6,6 +6,7 @@ import utils.BinaryNode;
 public class BinaryTreeBFS {
     public static <T> boolean find(BinaryNode<T> tree, T needle) {
         var timer = new Timer("BTBFS");
+        boolean result = false;
         CustomQueue<BinaryNode<T>> que = new CustomQueue<>();
 
         que.enqueue(tree);
@@ -19,7 +20,8 @@ public class BinaryTreeBFS {
 
             if (curr.getValue().equals(needle)) {
                 timer.end();
-                return true;
+                result = true;
+                break;
             }
 
             que.enqueue(curr.getLeft());
@@ -27,6 +29,6 @@ public class BinaryTreeBFS {
         }
 
         timer.end();
-        return false;
+        return result;
     }
 }
