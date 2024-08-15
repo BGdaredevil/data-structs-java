@@ -59,7 +59,7 @@ public class GraphBFS {
             return null;
         }
 
-        while (path[point]!=-1) {
+        while (path[point] != -1) {
             result.add(point);
             point = path[point];
         }
@@ -73,6 +73,54 @@ public class GraphBFS {
 
     @Nullable
     public static Integer[] listBFS(GraphEdge[][] graph, int start, int needle) {
-        return null;
+        var timer = new Timer("listBFS");
+        Boolean[] seen = new Boolean[graph.length];
+        Arrays.fill(seen, false);
+        Integer[] path = new Integer[graph.length];
+        Arrays.fill(path, -1);
+        ArrayList<Integer> que = new ArrayList<>();
+        que.add(start);
+        seen[start] = true;
+
+        do {
+            var currentNode = que.removeFirst();
+            if (currentNode == needle) {
+                break;
+            }
+
+            var connectedNodes = graph[currentNode];
+
+            for (int i = 0; i < connectedNodes.length; i++) {
+                var node = connectedNodes[i];
+                if (seen[node.to]) {
+                    continue;
+                }
+
+                path[node.to] = currentNode;
+                seen[node.to] = true;
+                que.add(node.to);
+            }
+
+            seen[currentNode] = true;
+        } while (!que.isEmpty());
+
+        int point = needle;
+        ArrayList<Integer> result = new ArrayList<>();
+
+        if (path[point] == -1) {
+            timer.end();
+            return null;
+        }
+
+        while (path[point] != -1) {
+            result.add(point);
+            point = path[point];
+        }
+
+        result.add(start);
+        Integer[] out = result.reversed().toArray(Integer[]::new);
+        timer.end();
+
+        return out;
     }
 }

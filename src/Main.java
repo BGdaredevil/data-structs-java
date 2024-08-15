@@ -26,8 +26,8 @@ public class Main {
 //        boolean result = Main.compareTrees();
 //        boolean result = Main.treeFindDFS();
 //        boolean result = Main.testMinHeap();
-        boolean result = Main.testMatrixBFS();
-//        boolean result = Main.testListBFS();
+//        boolean result = Main.testMatrixBFS();
+        boolean result = Main.testListBFS();
 
 
         if (result) {
