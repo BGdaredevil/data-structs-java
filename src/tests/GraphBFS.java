@@ -45,4 +45,11 @@ public class GraphBFS {
         return res == null;
     }
 
+    public static boolean listDijkstraShortestPath() {
+        Integer[] expected = {0, 1, 4, 5, 6};
+        Integer[] actual = structures.GraphBFS.listDijkstraShortestPath(0, 6, Constants.list1);
+
+        return Arrays.equals(expected, actual);
+    }
+
 }

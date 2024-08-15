@@ -28,7 +28,8 @@ public class Main {
 //        boolean result = Main.testMinHeap();
 //        boolean result = Main.testMatrixBFS();
 //        boolean result = Main.testListBFS();
-        boolean result = Main.testListDFS();
+//        boolean result = Main.testListDFS();
+        boolean result = Main.testListDijkstraShortestPath();
 
         if (result) {
             System.out.println("pass");
@@ -112,5 +113,8 @@ public class Main {
 
     static boolean testListDFS() {
         return GraphBFS.listDFS();
+    }
+    static boolean testListDijkstraShortestPath() {
+        return GraphBFS.listDijkstraShortestPath();
     }
 }

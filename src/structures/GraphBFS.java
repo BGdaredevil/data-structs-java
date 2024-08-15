@@ -7,6 +7,7 @@ import utils.GraphEdge;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
+import java.util.stream.IntStream;
 
 public class GraphBFS {
     @Nullable
@@ -159,5 +160,87 @@ public class GraphBFS {
         path.removeLast();
 
         return false;
+    }
+
+    @Nullable
+    public static Integer[] listDijkstraShortestPath(int start, int end, GraphEdge[][] graph) {
+        var timer = new Timer("listDijkstraShortestPath");
+
+        Boolean[] seen = new Boolean[graph.length];
+        Integer[] distances = new Integer[graph.length];
+        Integer[] path = new Integer[graph.length];
+
+        Arrays.fill(seen, false);
+        Arrays.fill(distances, Integer.MAX_VALUE);
+        Arrays.fill(path, -1);
+
+        distances[start] = 0;
+
+        while (hasUnvisited(seen, distances)) {
+            int lo = getClosestUnvisited(seen, distances);
+            seen[lo] = true;
+            GraphEdge[] visibleNodes = graph[lo];
+            for (int i = 0; i < visibleNodes.length; i++) {
+                var node = visibleNodes[i];
+                if (seen[node.to]) {
+                    continue;
+                }
+
+                int newDist = distances[lo] + node.weight;
+                if (newDist < distances[node.to]) {
+                    path[node.to] = lo;
+                    distances[node.to] = newDist;
+                }
+            }
+        }
+
+        int point = end;
+        ArrayList<Integer> result = new ArrayList<>();
+
+        if (path[point] == -1) {
+            timer.end();
+            return null;
+        }
+
+        while (path[point] != -1) {
+            result.add(point);
+            point = path[point];
+        }
+
+        result.add(start);
+        Integer[] out = result.reversed().toArray(Integer[]::new);
+        timer.end();
+
+        return out;
+    }
+
+    private static int getClosestUnvisited(Boolean[] seen, Integer[] dists) {
+        int distance = Integer.MAX_VALUE;
+        int loIdx = -1;
+
+        for (int i = 0; i < seen.length; i++) {
+            if (seen[i]) {
+                continue;
+            }
+
+            if (dists[i] < Integer.MAX_VALUE && distance > dists[i]) {
+                distance = dists[i];
+                loIdx = i;
+            }
+        }
+
+        return loIdx;
+    }
+
+    private static boolean hasUnvisited(Boolean[] seen, Integer[] dists) {
+        boolean res = false;
+        for (int i = 0; i < seen.length; i++) {
+            if (!seen[i] && dists[i] < Integer.MAX_VALUE) {
+                res = true;
+                return res;
+            }
+        }
+
+        return res;
     }
 }
