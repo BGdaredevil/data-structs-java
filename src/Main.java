@@ -25,7 +25,9 @@ public class Main {
 //        boolean result = Main.testBTBFS();
 //        boolean result = Main.compareTrees();
 //        boolean result = Main.treeFindDFS();
-        boolean result = Main.testMinHeap();
+//        boolean result = Main.testMinHeap();
+        boolean result = Main.testTrie();
+
 
         if (result) {
             System.out.println("pass");
@@ -93,5 +95,9 @@ public class Main {
 
     static boolean testMinHeap() {
         return MinHeap.testMinHeap();
+    }
+
+    static boolean testTrie() {
+        return Trie.testTrie();
     }
 }
