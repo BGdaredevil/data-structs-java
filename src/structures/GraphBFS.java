@@ -123,4 +123,41 @@ public class GraphBFS {
 
         return out;
     }
+
+    @Nullable
+    public static Integer[] listDFS(GraphEdge[][] graph, int start, int needle) {
+        var timer = new Timer("listDFS");
+        Boolean[] seen = new Boolean[graph.length];
+        Arrays.fill(seen, false);
+        ArrayList<Integer> path = new ArrayList<>();
+        boolean foundPath = GraphBFS.walk(graph, start, needle, seen, path);
+        var out = foundPath ? path.toArray(Integer[]::new) : null;
+        timer.end();
+
+        return out;
+    }
+
+    private static boolean walk(GraphEdge[][] graph, int node, int needle, Boolean[] seen, ArrayList<Integer> path) {
+        if (seen[node]) {
+            return false;
+        }
+
+        seen[node] = true;
+        path.add(node);
+        if (node == needle) {
+            return true;
+        }
+
+        var reachableNodes = graph[node];
+        for (int i = 0; i < reachableNodes.length; i++) {
+            var currNode = reachableNodes[i];
+            if (GraphBFS.walk(graph, currNode.to, needle, seen, path)) {
+                return true;
+            }
+        }
+
+        path.removeLast();
+
+        return false;
+    }
 }
