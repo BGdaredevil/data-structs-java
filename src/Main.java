@@ -30,7 +30,8 @@ public class Main {
 //        boolean result = Main.testListBFS();
 //        boolean result = Main.testListDFS();
 //        boolean result = Main.testListDijkstraShortestPath();
-        boolean result = Main.testCustomMap();
+//        boolean result = Main.testCustomMap();
+        boolean result = Main.testLRU();
 
         if (result) {
             System.out.println("pass");
@@ -122,5 +123,8 @@ public class Main {
 
     static boolean testCustomMap() {
         return CustomMap.customMap();
+    }
+    static boolean testLRU() {
+        return LRU.runLRUTest();
     }
 }
