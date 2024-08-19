@@ -29,7 +29,8 @@ public class Main {
 //        boolean result = Main.testMatrixBFS();
 //        boolean result = Main.testListBFS();
 //        boolean result = Main.testListDFS();
-        boolean result = Main.testListDijkstraShortestPath();
+//        boolean result = Main.testListDijkstraShortestPath();
+        boolean result = Main.testCustomMap();
 
         if (result) {
             System.out.println("pass");
@@ -114,7 +115,12 @@ public class Main {
     static boolean testListDFS() {
         return GraphBFS.listDFS();
     }
+
     static boolean testListDijkstraShortestPath() {
         return GraphBFS.listDijkstraShortestPath();
+    }
+
+    static boolean testCustomMap() {
+        return CustomMap.customMap();
     }
 }
